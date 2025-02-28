@@ -3,7 +3,8 @@ import image from "../assets/image.png";
 import { AppContext } from "../context/AppContext";
 
 const Header = () => {
-  const { handleSourceImage, handleTargetImage, handlePrompt, prompt, sourceImageName, targetImageName } =
+
+  const { handleSourceImage, handleTargetImage, sourceImageName, targetImageName, becomeImage } =
     useContext(AppContext);
 
   return (
@@ -50,16 +51,7 @@ const Header = () => {
           </p>
         </div>
         <div className="mt-4 flex items-center justify-between gap-4">
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Enter your prompt here..."
-              value={prompt}
-              className="w-full px-6 py-3.5 rounded-full border border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300"
-              onChange={(e) => handlePrompt(e.target.value)}
-            />
-          </div>
-          <button className="px-8 py-3.5 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:scale-105 transition-all duration-500">
+          <button onClick={becomeImage} className="px-8 py-3.5 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white hover:scale-105 transition-all duration-500">
             Generate ✨
           </button>
         </div>
